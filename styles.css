@@ -47,6 +47,9 @@ table {
   border-spacing: 0;
 }
 
+
+/* ROOT COLORS AND FONTS */
+
 :root{
   --dk-blue: #020659;
   --med-dk-blue: #020873;
@@ -78,11 +81,17 @@ body {
   background-color: var(--white);
 }
 
+
+/* HEADER */
+
 header {
   background: linear-gradient(to right, #2104D9, #020659, #020873, #000000);
   color: var(--white);
   padding: 5px 30px 20px 30px
-}
+} 
+
+/* H1 H2 H3 */
+
 h1 {
     font-size: var(--h1-font-size);
     color: var(--white);
@@ -98,7 +107,10 @@ h1, h2, h3 {
     line-height: 2em;
     text-transform: uppercase;
     font-weight: bold;   
-}
+} 
+
+/* NAV */
+
 nav {
     top: 0;
     position: relative;
@@ -111,6 +123,12 @@ nav a {
     padding: 5px;
     display: block;
 }
+nav #home {
+    position: absolute;
+    top: 1em;
+    left: 30%;
+    z-index: 2;
+} 
 nav a:hover {
     color: var(--lightest-blue);
 }
@@ -122,11 +140,16 @@ nav h2 {
 a:nth-of-type(2n + 1) {
     text-transform: uppercase;
 }
+a:nth-of-type(2n) {
+    text-transform: uppercase;
+}
 a:nth-of-type(1) {
     font-variant: small-caps;
     font-weight: bold;
-    font-size: var(--h2-h3-font-size);
 }
+
+
+/* HAMBURGER NAV BAR */
 
 ul {
     grid-column-start: 1;
@@ -200,6 +223,8 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 }*/
 main {
     padding-top: 20px;
+
+    /* SCROLL BARS */
 }
 .scroll {
     display: grid;
@@ -207,7 +232,6 @@ main {
     overflow-x: auto;
     overflow-y: hidden;
 }
-
 .scroll section {
     margin: 10px;
     position: relative;
@@ -233,6 +257,58 @@ dt {
     padding-right: 5px;
     font-style: italic;
 }
+
+/* ASIDE SCROLL DIVS */
+
+aside .scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: var(--lightest-blue);
+}
+aside .scroll h3, p{
+    color: var(--white);
+    text-align: center;
+    line-height: 1.25em;
+}
+aside .scroll h3{
+    padding-bottom: 10px;
+}
+aside .scroll section {
+    margin: 10px;
+    position: relative;
+    background-color:var(--lt-blue);
+    padding: 10px 10px 20px 10px;
+}
+aside .scroll section:hover {
+    background-color: var(--dk-blue);
+}
+aside .scroll div{
+    position: absolute;
+    top: 125px;
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+
+/* ASIDE CURATED PLAYLIST */
+
+aside #curated .scroll  {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: var(--med-blue);
+}
+aside .scroll .curatedPlaylist{
+    background-color: var(--dk-blue);
+}
+aside .scroll .curatedPlaylist:hover {
+    background-color: var(--wine-red);
+}
+
+/* SLIDE BARS AND AUDIO CONTROLLER*/
 
 audio::-webkit-media-controls-mute-button {
     
@@ -270,6 +346,9 @@ audio::-webkit-media-controls-enclosure {
 #playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
     background: var(--white);
 }
+
+/* BUTTONS */
+
 button {
     font-family: var(--body-fonts);
     font-size: var(--p-dl-dd-font-size);
@@ -287,7 +366,10 @@ button {
 button:hover {
     background-color: var(--dk-blue);
 }
-footer p {
+
+/* FOOTER */
+
+footer {
     color: var(--wine-red);
     font-size: var(--footer-p-font-size);
     text-align: center;
