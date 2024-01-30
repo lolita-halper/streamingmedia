@@ -391,64 +391,13 @@ footer {
     nav {
         display: grid;
         grid-template-columns: 1fr;
-        top: 0;
-        position: relative;
-        background-color: var(--med-blue);
-        padding-left: 20px;
-    }
-    nav a {
-        text-decoration: none;
-        color: var(--white);
-        padding: 5px;
-        display: block;
-    }
-    nav a:hover {
-        color: var(--lightest-blue);
-    }
-    nav h2 {
-      visibility: hidden;
-      height:1px;
     }
     li:nth-of-type(1) a {
-        font-variant: small-caps;
-        font-weight: bold;
-        font-size: 2em;
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0%;   
         grid-column-start: 1;
-        grid-column-end: 2; 
+        grid-column-end: 2;
+        position: inherit;
     }
-
-    li:nth-of-type(2n) a {
-        text-transform: uppercase;
-        
-    }
-    li:nth-of-type(2n + 2) a {
-        text-transform: uppercase;
-    }
-    li:nth-of-type(2n + 3) a {
-        text-transform: uppercase;3
-
-#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
-    width: 15px;;
-}
-#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
-    box-shadow: inset 0 0 15px var(--dk-blue);
-}
-#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
-    background: var(--dk-blue);
-    border-radius: 5px;
-}
-#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
-    background: var(--white);
-}
-
-
-
-
-
-
+    
+    
 
 }
