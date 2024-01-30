@@ -68,28 +68,34 @@ table {
   --footer-p-font-size: .75em;
 }
 
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 html {
-  background-color: var(--dk-blue);
+    background-color: var(--dk-blue);
 }
-
 body {
-  width: 375px;
-  font-family: var(--body-fonts);
-  font-size: var(--p-dl-dd-font-size);
-  line-height: 1.35;
-  margin: 0 auto;
-  background-color: var(--white);
+    min-width: 375px;
+    font-family: var(--body-fonts);
+    font-size: var(--p-dl-dd-font-size);
+    line-height: 1.35;
+    margin: 0 auto;
+    background-color: var(--white);
 }
-
 
 /* HEADER */
 
 header {
-  background: linear-gradient(to right, #2104D9, #020659, #020873, #000000);
-  color: var(--white);
-  padding: 5px 30px 20px 30px
+    background: linear-gradient(to right, #2104D9, #020659, #020873, #000000);
+    color: var(--white);
+    padding: 5px 30px 20px 30px;
+    width: 100%;
 } 
-
+header p {
+    text-align: left;
+} 
 /* H1 H2 H3 */
 
 h1 {
@@ -125,9 +131,12 @@ nav a {
 }
 nav #home {
     position: absolute;
-    top: 1em;
+    top: .5em;
     left: 30%;
     z-index: 2;
+    /*font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.25em;*/
 } 
 nav a:hover {
     color: var(--lightest-blue);
@@ -209,23 +218,16 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
-/*@media screen and (min-width:834px) {
-    ul {
-        overflow: visible;
-        position: absolute;
-        top: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-    label span, input {
-        display: none;
-    }
-}*/
+
+
+
+
 main {
     padding-top: 20px;
 
     /* SCROLL BARS */
 }
+
 .scroll {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -241,7 +243,7 @@ main {
     top: 251px;
     background-color: rgba(255,255,255,.75);
     padding: 5px;
-    height: 50px;
+    height: 60px;
     width: 350px;
 }
 audio {
@@ -267,7 +269,7 @@ aside .scroll {
     overflow-y: hidden;
     background-color: var(--lightest-blue);
 }
-aside .scroll h3, p{
+aside .scroll h3, p {
     color: var(--white);
     text-align: center;
     line-height: 1.25em;
@@ -374,4 +376,22 @@ footer {
     font-size: var(--footer-p-font-size);
     text-align: center;
     padding-bottom: 10px;
+    width: 100%;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+
+    
 }
