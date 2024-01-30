@@ -146,16 +146,22 @@ nav h2 {
   height:1px;
 }
 
-a:nth-of-type(2n + 1) {
-    text-transform: uppercase;
-}
-a:nth-of-type(2n) {
-    text-transform: uppercase;
-}
-a:nth-of-type(1) {
+li:nth-of-type( 1) a {
     font-variant: small-caps;
     font-weight: bold;
+    font-size: 2em;
 }
+li:nth-of-type(2n) a {
+    text-transform: uppercase;
+    
+}
+li:nth-of-type(2n + 2) a {
+    text-transform: uppercase;
+}
+li:nth-of-type(2n + 3) a {
+    text-transform: uppercase;
+}
+
 
 
 /* HAMBURGER NAV BAR */
@@ -393,5 +399,52 @@ footer {
         display: none;
     }
 
+    aside .scroll {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        overflow-x: auto;
+        overflow-y: hidden;
+        background-color: var(--lightest-blue);
+    }
+    aside .scroll h3, p {
+        color: var(--white);
+        text-align: center;
+        line-height: 1.25em;
+    }
+    aside .scroll h3{
+        padding-bottom: 10px;
+    }
+    aside .scroll section {
+        margin: 10px;
+        position: relative;
+        background-color:var(--lt-blue);
+        padding: 10px 10px 20px 10px;
+    }
+    aside .scroll section:hover {
+        background-color: var(--dk-blue);
+    }
+    aside .scroll div{
+        position: absolute;
+        top: 125px;
+        padding: 5px;
+        height: 50px;
+        width: 350px;
+    }
+    
+    /* ASIDE CURATED PLAYLIST */
+    
+    aside #curated .scroll  {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        overflow-x: auto;
+        overflow-y: hidden;
+        background-color: var(--med-blue);
+    }
+    aside .scroll .curatedPlaylist{
+        background-color: var(--dk-blue);
+    }
+    aside .scroll .curatedPlaylist:hover {
+        background-color: var(--wine-red);
+    }
     
 }
