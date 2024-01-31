@@ -292,10 +292,6 @@ aside .scroll div{
 /* ASIDE CURATED PLAYLIST */
 
 aside #curated .scroll  {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    overflow-x: auto;
-    overflow-y: hidden;
     background-color: var(--med-blue);
 }
 aside .scroll .curatedPlaylist{
@@ -374,30 +370,66 @@ footer {
     width: 100%;
 }
 
+
 /* MEDIA QUERY */
 
 @media screen and (min-width:834px) {
-    ul {
-        overflow: visible;
-        position: absolute;
-        top: 0;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-        width: 100%;
-    }
-    label span, input {
-        display: none;
-    }
-    nav {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    li:nth-of-type(1) a {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        position: inherit;
-    }
-    
+
+
+ul {
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+label span, input {
+    display: none;
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+li:nth-of-type(1) a {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    position: inherit;
+}
+
+  aside {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  aside .scroll {
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    width: 50%;
+  }
+  aside .scroll h3, p {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: auto 0;
+  }
+  aside .scroll section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+  }
+  aside .scroll section img {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  
+  button {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+
+
+
     
 
 }
