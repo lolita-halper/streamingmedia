@@ -16,78 +16,80 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-  display: block;
+    display: block;
 }
 body {
-  line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-  list-style: none;
+    list-style: none;
 }
 blockquote, q {
-  quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none;
+    content: '';
+    content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
-/* MY CSS STARTS HERE */
+/* ----------MY CSS STARTS HERE---------- */
 
-/* ROOT COLORS AND FONTS */
-
+/* ----------ROOT COLORS AND FONTS---------- */
 :root{
-  --dk-blue: #020659;
-  --med-dk-blue: #020873;
-  --med-blue: #030A8C;
-  --bright-blue: #2104D9;
-  --lt-blue: #0D8DfB;
-  --lightest-blue: #2699FB;
-  --wine-red: #590242;
-  --white: #ffffff;
-  --black: #000000;
-
-  --body-fonts: Verdana, Geneva, Tahoma, sans-serif;
-  --h1-font-size: 1.25em;
-  --h2-h3-font-size: 1em;
-  --p-dl-dd-font-size: 1em;
-  --footer-p-font-size: .75em;
+    --dk-blue: #020659;
+    --med-dk-blue: #020873;
+    --med-blue: #030A8C;
+    --bright-blue: #2104D9;
+    --lt-blue: #0D8DfB;
+    --lightest-blue: #2699FB;
+    --wine-red: #590242;
+    --white: #ffffff;
+    --black: #000000;
+    --body-fonts: Verdana, Geneva, Tahoma, sans-serif;
+    --h1-font-size: 1.25em;
+    --h2-h3-font-size: 1em;
+    --p-dl-dd-font-size: 1em;
+    --footer-p-font-size: .75em;
 }
 * {
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
-html {
+html {                
     background-color: var(--dk-blue);
 }
 body {
-    min-width: 375px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
     font-family: var(--body-fonts);
     font-size: var(--p-dl-dd-font-size);
     line-height: 1.35;
+    min-width: 375px;
     margin: 0 auto;
     background-color: var(--white);
 }
 
-/* HEADER */
-
+/* ----------HEADER---------- */
 header {
+    grid-row: 2/3;
     background: linear-gradient(to right, #2104D9, #020659, #020873, #000000);
     color: var(--white);
     padding: 5px 30px 20px 30px;
@@ -95,9 +97,9 @@ header {
 } 
 header p {
     text-align: left;
-} 
-/* H1 H2 H3 */
+}
 
+/* ----------H1 H2 H3---------- */
 h1 {
     font-size: var(--h1-font-size);
     color: var(--white);
@@ -106,8 +108,8 @@ h2 {
     padding-left: 35px;
 }
 h2, h3 {
-    font-size: var(--h2-h3-font-size);
-    color: var(--wine-red);
+font-size: var(--h2-h3-font-size);
+color: var(--wine-red);
 }
 h1, h2, h3 {
     line-height: 2em;
@@ -115,15 +117,18 @@ h1, h2, h3 {
     font-weight: bold;   
 } 
 
-/* NAV */
-
+/* ----------NAV---------- */
 nav {
+    grid-row: 1/2;
+    grid-template-columns: 25% 75%;
     top: 0;
     position: relative;
     background-color: var(--med-blue);
     padding-left: 20px;
 }
 nav a {
+    align-items: center;
+    justify-content: start;
     text-decoration: none;
     color: var(--white);
     padding: 5px;
@@ -133,8 +138,8 @@ nav a:hover {
     color: var(--lightest-blue);
 }
 nav h2 {
-  visibility: hidden;
-  height:1px;
+    visibility: hidden;
+    height:1px;
 }
 
 li:nth-of-type(1) a {
@@ -143,12 +148,12 @@ li:nth-of-type(1) a {
     font-size: 2em;
     position: absolute;
     z-index: 2;
-    top: 0;
-    left: 35%;    
+    top: 0; 
+    left: 25%;
 }
 li:nth-of-type(2n) a {
     text-transform: uppercase;
-    
+
 }
 li:nth-of-type(2n + 2) a {
     text-transform: uppercase;
@@ -157,7 +162,7 @@ li:nth-of-type(2n + 3) a {
     text-transform: uppercase;
 }
 
-/* HAMBURGER NAV BAR */
+/* ----------HAMBURGER NAV BAR---------- */
 
 ul {
     grid-column-start: 1;
@@ -216,13 +221,12 @@ input:checked ~ label span:after {
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
 }
-
 main {
+    grid-row: 3/4;
     padding-top: 20px;
-
-    /* SCROLL BARS */
 }
 
+/* -----------SCROLL BARS---------- */
 .scroll {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -255,33 +259,28 @@ dt {
     font-style: italic;
 }
 
-/* ASIDE SCROLL DIVS */
-
-aside .scroll {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    overflow-x: auto;
-    overflow-y: hidden;
+/* ----------PLAYLISTS SCROLL DIVS---------- */
+#playlists .scroll {
     background-color: var(--lightest-blue);
 }
-aside .scroll h3, p {
+#playlists .scroll h3, p, #curated .scroll h3, p {
     color: var(--white);
     text-align: center;
     line-height: 1.25em;
 }
-aside .scroll h3{
+#playlists .scroll h3, #curated .scroll h3 {
     padding-bottom: 10px;
 }
-aside .scroll section {
+#playlists .scroll section, #curated .scroll section {
     margin: 10px;
     position: relative;
     background-color:var(--lt-blue);
     padding: 10px 10px 20px 10px;
 }
-aside .scroll section:hover {
+#playlists .scroll section:hover {
     background-color: var(--dk-blue);
 }
-aside .scroll div{
+#playlists .scroll div, #curated .scroll div {
     position: absolute;
     top: 125px;
     padding: 5px;
@@ -289,22 +288,20 @@ aside .scroll div{
     width: 350px;
 }
 
-/* ASIDE CURATED PLAYLIST */
-
-aside #curated .scroll  {
+/* ----------CURATED PLAYLIST---------- */
+#curated .scroll {
     background-color: var(--med-blue);
 }
-aside .scroll .curatedPlaylist{
-    background-color: var(--dk-blue);
+#curated .scroll section {
+    background-color:var(--dk-blue);
 }
-aside .scroll .curatedPlaylist:hover {
+#curated .scroll section:hover {
     background-color: var(--wine-red);
 }
 
-/* SLIDE BARS AND AUDIO CONTROLLER*/
+/* -------SLIDE BARS AND AUDIO CONTROLLER-------*/
 
 audio::-webkit-media-controls-mute-button {
-    
 
 }
 audio::-webkit-media-controls-play-button {
@@ -340,8 +337,7 @@ audio::-webkit-media-controls-enclosure {
     background: var(--white);
 }
 
-/* BUTTONS */
-
+/* ----------BUTTONS---------- */
 button {
     font-family: var(--body-fonts);
     font-size: var(--p-dl-dd-font-size);
@@ -360,79 +356,166 @@ button:hover {
     background-color: var(--dk-blue);
 }
 
-/* FOOTER */
-
+/* ----------FOOTER---------- */
 footer {
+    grid-row: 4/5;
+    display: grid;
+    justify-content: center;
     color: var(--wine-red);
     font-size: var(--footer-p-font-size);
-    text-align: center;
     padding-bottom: 10px;
     width: 100%;
 }
 
-
-/* MEDIA QUERY */
+/* ----------MEDIA QUERY---------- */
 
 @media screen and (min-width:834px) {
 
-
+body {
+    grid-template-columns: repeat(auto-fill, minmax(834px, 1fr));
+}
 ul {
     overflow: visible;
     position: absolute;
     top: 0;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-self: center;
 }
 label span, input {
     display: none;
-}
-nav {
-    display: grid;
-    grid-template-columns: 1fr;
 }
 li:nth-of-type(1) a {
     grid-column-start: 1;
     grid-column-end: 2;
     position: inherit;
 }
-
-  aside {
+li:nth-of-type(2n) a {
+    padding-left: 50px;
+}
+li:nth-of-type(2n + 2) a {
+    padding-left: 50px;
+}
+li:nth-of-type(2n + 3) a {
+    padding-left: 50px;
+}
+.allPlaylists {
+    display: grid;
+    grid-auto-rows:auto;
+    grid-template-columns: 1fr 1fr;
+  }
+#playlists h2 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+#curated h2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+#playlists .scroll {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-column: 1/2;
+    grid-row: 2/3;
   }
-  aside .scroll {
-    grid-template-rows: repeat(5, 1fr);
+  #curated .scroll {
+    display: grid;
     grid-template-columns: 1fr;
-    width: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+#btnPlaylists {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin-left: 237px;
+}
+#btnCurated {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    margin-left: 237px;
+}
+#btnTrending {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    margin-left: 654px;
+}
+
+#playlists .scroll section, #curated .scroll section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
   }
   
-  aside .scroll section {
+#playlists .scroll div, #curated .scroll div {
+    position: absolute;
+    top: 125px;
+    padding: 5px;
+    height: 350px;
+    width: 50px;
+}
+  .playlist-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .playlist-2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .playlist-3 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .playlist-4 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .playlist-5 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+.curatedList-1 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.curatedList-2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.curatedList-3 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.curatedList-4 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+.curatedList-5 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-content: center;
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+#playlists .scroll h3, p , #curated .scroll h3, p {
+    align-items: center;
+    justify-content: center;
   }
-  aside .scroll h3 {
-    padding-bottom: 0px;
-    align-content: end;
+  #playlists .scroll h3 , #curated .scroll h3 {
+    display: grid;
+    align-items: end;
+    justify-content: center;
   }
-  aside .scroll section img {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+#playlists .scroll section img, #curated .scroll section img {
+    grid-column: 1/2;
+    grid-row: 1/3;
   }
   
   button {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
+    padding-right: 20px;
+    margin: 10px 0 30px 0;
+    left: 200px;
+}
 
-
-
-
-    
 
 }
