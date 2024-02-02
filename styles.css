@@ -79,10 +79,10 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
     grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+    width: 375px;
     font-family: var(--body-fonts);
     font-size: var(--p-dl-dd-font-size);
     line-height: 1.35;
-    min-width: 375px;
     margin: 0 auto;
     background-color: var(--white);
 }
@@ -372,7 +372,8 @@ footer {
 @media screen and (min-width:834px) {
 
 body {
-    grid-template-columns: repeat(auto-fill, minmax(834px, 1fr));
+   grid-template-columns: repeat(auto-fill, minmax(834px, 1fr));
+   width: 834px;
 }
 ul {
     overflow: visible;
@@ -419,6 +420,7 @@ li:nth-of-type(2n + 3) a {
     overflow-x: hidden;
     grid-column: 1/2;
     grid-row: 2/3;
+    height: 500px;
   }
   #curated .scroll {
     display: grid;
@@ -427,6 +429,7 @@ li:nth-of-type(2n + 3) a {
     overflow-x: hidden;
     grid-column: 2/3;
     grid-row: 2/3;
+    height: 500px;
   }
 #btnPlaylists {
     grid-column: 1/2;
