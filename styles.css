@@ -500,6 +500,7 @@ li:nth-of-type(2n + 3) a {
 #playlists .scroll h3, p , #curated .scroll h3, p {
     align-items: center;
     justify-content: center;
+    padding: 10px;
   }
   #playlists .scroll h3 , #curated .scroll h3 {
     display: grid;
