@@ -339,7 +339,7 @@ audio::-webkit-media-controls-enclosure {
 }
 
 /* ----------BUTTONS---------- */
-#button {
+.button {
     font-family: var(--body-fonts);
     font-size: var(--p-dl-dd-font-size);
     line-height: 1.35;
@@ -353,7 +353,7 @@ audio::-webkit-media-controls-enclosure {
     text-align: center;
     margin: 10px 0 30px 32px;
 }
-#button:hover {
+.button:hover {
     background-color: var(--dk-blue);
 }
 
@@ -423,7 +423,7 @@ li:nth-of-type(2n + 3) a {
     grid-row: 2/3;
     height: 500px;
   }
-  #curated .scroll {
+#curated .scroll {
     display: grid;
     grid-template-columns: 1fr;
     overflow-y: auto;
@@ -433,21 +433,21 @@ li:nth-of-type(2n + 3) a {
     height: 500px;
   }
 
-#button  {
+#btnPlaylists  {
     grid-column: 1/2;
     grid-row: 3/4;
     margin-left: 237px;
 }
-#button {
+#btnCurated {
     grid-column: 2/3;
     grid-row: 3/4;
     margin-left: 237px;
 }
-#button {
+#btnTrending {
     grid-column: 2/3;
     grid-row: 3/4;
 }
-#trending #button{
+#trending .button {
     margin-left: 654px
 }
 
