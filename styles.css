@@ -238,6 +238,7 @@ main {
     position: relative;
 }
 .scroll div {
+    display: grid;
     position: absolute;
     top: 251px;
     background-color: rgba(255,255,255,.75);
@@ -338,7 +339,7 @@ audio::-webkit-media-controls-enclosure {
 }
 
 /* ----------BUTTONS---------- */
-button {
+#button {
     font-family: var(--body-fonts);
     font-size: var(--p-dl-dd-font-size);
     line-height: 1.35;
@@ -352,7 +353,7 @@ button {
     text-align: center;
     margin: 10px 0 30px 32px;
 }
-button:hover {
+#button:hover {
     background-color: var(--dk-blue);
 }
 
@@ -431,20 +432,23 @@ li:nth-of-type(2n + 3) a {
     grid-row: 2/3;
     height: 500px;
   }
-#btnPlaylists {
+
+#button  {
     grid-column: 1/2;
     grid-row: 3/4;
     margin-left: 237px;
 }
-#btnCurated {
+#button {
     grid-column: 2/3;
     grid-row: 3/4;
     margin-left: 237px;
 }
-#btnTrending {
+#button {
     grid-column: 2/3;
     grid-row: 3/4;
-    margin-left: 654px;
+}
+#trending #button{
+    margin-left: 654px
 }
 
 #playlists .scroll section, #curated .scroll section {
@@ -505,7 +509,7 @@ li:nth-of-type(2n + 3) a {
     justify-content: center;
     padding: 10px;
   }
-  #playlists .scroll h3 , #curated .scroll h3 {
+#playlists .scroll h3 , #curated .scroll h3 {
     display: grid;
     align-items: end;
     justify-content: center;
